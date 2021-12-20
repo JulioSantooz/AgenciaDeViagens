@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]  +Viagens</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #94a1b2">
+            <div class="container">
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">+Viagens</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation" style = "background-color: white">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Destino" asp-action="Index">Destino</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Promocao" asp-action="Index">Promoções</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Carrinho" asp-action="Index">Carrinho</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Cadastro" asp-action="Index">Cadastro</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Feedback" asp-action="Index">Feedback</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style = "background-color: #94a1b2">
+        <div class="container text-white text-center">
+            <p>Desenvolvido por <a class="text-white" href="https://www.linkedin.com/in/julio-henrique-diaz-viana-dos-santos-209009201/">Julio Santos</a> e orientado por <a class="text-white" href="https://www.linkedin.com/in/claudio-fico-fonseca-13903260/">Claudio Fico</a> e <a class="text-white" href="https://www.linkedin.com/in/gabriel-sales-3093b0168/">Gabriel Sales</a>.</p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿@model _Viagens.Models.Feedback;
+
+@{
+    ViewData["Title"] = "Feedback";
+    var feedbacks = ViewData["feedback"] as List<Feedback>;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <h2>Meus Feedbacks</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (var feedback in feedbacks)
+                        {
+                            <tr>
+                                <td>@feedback.Id_feedback</td>
+                                <td>@feedback.Data</td>
+                                <td>@feedback.Descricao</td>
+                                <td>
+                                <form asp-controller="Feedback" asp-action="Deletar">
+                                    <button class="btn btn-danger" type="submit">x deletar</button>
+                                    <input asp-for="Id_feedback" style="visibility:hidden;" type="text" value="@feedback.Id_feedback">
+                                </form>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            
+           
+            <hr />
+            <h2>Cadastrar</h2>
+            <form asp-controller="Feedback" asp-action="Index">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="">Data</label>
+                        <input asp-for="Data" type="date" class="form-control" id="">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Descrição</label>
+                        <textarea asp-for="Descricao" class="form-control" id="" placeholder="Digíte..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Incluir</button>
+            </form>
+            <br />
+            <hr />
+            <br />
+            <h2>Atualizar Dados</h2>
+            <form asp-controller="Feedback" asp-action="Atualizar">
+
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="">Código do cliente</label>
+                        <select class="custom-select" asp-for="Id_feedback">
+                            <option selected>-- Selecione um código</option>
+                            @{
+                                foreach (var feedback in feedbacks)
+                                {
+                                    <option>@feedback.Id_feedback</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="">Data</label>
+                        <input asp-for="Data" type="date" class="form-control" id="">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Descrição</label>
+                        <textarea asp-for="Descricao" class="form-control" id="" placeholder="Digíte..."></textarea>
+                    </div>                    
+                </div>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+            </form>
+        </div>
+    </div>
+</div>

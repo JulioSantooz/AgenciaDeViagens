@@ -1,0 +1,129 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<body>
+
+    <div class="container">
+
+        <!--Modal cadastrar-->
+
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCriar">
+          Criar Login
+        </button>
+      
+        <!-- container do modal -->
+        <div class="modal" id="modalCriar">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            
+              <!-- cabecalho do modal -->
+              <div class="modal-header">
+                <h4 class="modal-title">Criar</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              
+              <!-- corpo do modal -->
+              <div class="modal-body">
+                <div class="container">
+                    <h2 class="text-center">Login</h2>
+                    <form action="/action_page.php" class="was-validated">
+                      <div class="form-group">
+                        <label for="uname">Login:</label>
+                        <input type="text" class="form-control" id="uname" placeholder="Digite o login" name="uname" required>
+                        <div class="valid-feedback">Preenchimento Válido</div>
+                        <div class="invalid-feedback">Campo Obrigatório</div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Digite o email" name="email" required>
+                        <div class="valid-feedback">Preenchimento Válido</div>
+                        <div class="invalid-feedback">Campo Obrigatório</div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="pwd">Senha:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Digite a senha" name="pswd" required>
+                        <div class="valid-feedback">Válido</div>
+                        <div class="invalid-feedback">Por favor, preencha a senha</div>
+                      </div>
+                      
+                        <div class="form-group form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" name="remember" required> Lembrar login
+                          <div class="valid-feedback">Aceito</div>
+                          <div class="invalid-feedback">Não aceito</div>
+                        </label>
+                      </div>
+                      <button type="submit" class="btn btn-block my-4 text-white" style="background-color: rgb(43, 226, 119);">Criar</button>
+                    </form>
+                    <button type="button" class="btn btn-link " data-dismiss="modal" data-toggle="modal" data-target="#modalAcessar">
+                      Acessar login
+                    </button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        <!--Modal acessar-->
+
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAcessar">
+          Acessar Login
+        </button>
+      
+        <!-- container do modal -->
+        <div class="modal" id="modalAcessar">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            
+              <!-- cabecalho do modal -->
+              <div class="modal-header">
+                <h4 class="modal-title">Acessar</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              
+              <!-- corpo do modal -->
+              <div class="modal-body">
+                <div class="container">
+                    <h2 class="text-center">Login</h2>
+                    <form action="/action_page.php" class="was-validated">
+                      <div class="form-group">
+                        <label for="uname">Login:</label>
+                        <input type="text" class="form-control" id="uname" placeholder="Digite o login" name="uname" required>
+                        <div class="valid-feedback">Preenchimento Válido</div>
+                        <div class="invalid-feedback">Campo Obrigatório</div>
+                      </div>
+                      
+                        <div class="form-group">
+                        <label for="pwd">Senha</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Digite a senha" name="pswd" required>
+                        <div class="valid-feedback">Válido</div>
+                        <div class="invalid-feedback">Por favor, preencha a senha</div>
+                      </div>
+                      
+                        <div class="form-group form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" name="remember" required> Lembrar login
+                          <div class="valid-feedback">Aceito</div>
+                          <div class="invalid-feedback">Não aceito</div>
+                        </label>
+                      </div>
+                      <button type="submit" class="btn btn-block my-4 text-white" style="background-color: rgb(43, 226, 119);">Acessar</button>
+                    </form>
+                    <button type="button" class="btn btn-link " data-dismiss="modal" data-toggle="modal" data-target="#modalCriar">
+                      Crie login
+                    </button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+</body>

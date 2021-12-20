@@ -1,0 +1,32 @@
+/*Inicio da configuracao de toda cor da aplicacao*/
+:root{
+    --cor-fundo: #16161a;
+    --cor-titulo: #fffffe;
+    --cor-texto: #94a1b2;
+    --cor-button: rgb(43, 226, 119);
+}
+
+/*Fim da configuracao de toda cor da aplicacao*/
+
+/*Inicio da estilizacao do carrinho*/
+.container-carrinho {
+    background-color: var(--cor-fundo);
+    width: 1200px;
+    height: 840px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-carrinho h1 {
+    color: var(--cor-titulo);
+}
+
+.container-carrinho img {
+    width: 100px;
+    height: 100px;
+
+    margin-left: 5px;
+}
+/*Fim da estilizacao do carrinho*/

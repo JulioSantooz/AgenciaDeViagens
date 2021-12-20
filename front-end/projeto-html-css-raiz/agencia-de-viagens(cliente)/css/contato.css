@@ -1,0 +1,90 @@
+/*Inicio da configuracao de toda cor da aplicacao*/
+:root{
+    --cor-fundo: #16161a;
+    --cor-titulo: #fffffe;
+    --cor-texto: #94a1b2;
+    --cor-button: rgb(43, 226, 119);
+}
+
+/*Fim da configuracao de toda cor da aplicacao*/
+
+/*Inicio do grid geral*/
+.grid-contato {
+    background-color: var(--cor-texto);
+
+    margin: 0px auto;
+    max-width: 1200px;
+
+    display: grid;
+    grid-template: 
+        "contato" 840px
+        /1200px
+    ;
+
+    gap: 10px;
+}
+/*Fim do grid geral*/
+
+/*Inicio da estilizacao do contato*/
+.contato {
+    grid-area: contato;
+    background-color: var(--cor-fundo);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.conteudo-contato {
+    background-color: var(--cor-button);
+    width: 600px;
+    height: 630px;
+    margin-top: 50px;
+    border-radius: 5px;
+
+    align-self: center;
+}
+
+.conteudo-contato form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    margin: 15px;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 15px;
+    font-size: 20px;
+    border: none;
+}
+
+#nome {
+    margin-top: 50px;
+}
+
+.conteudo-contato form textarea {
+    height: 180px;
+    padding: 15px;
+    resize: none;
+}
+.conteudo-contato h1 {
+    margin-top: 30px;
+}
+
+.conteudo-contato form button {
+    width: 200px;
+    height: 50px;
+
+    margin: 10px auto;
+    border-radius: 10px;
+    border: none;
+    
+    font-size: 20px;
+}
+/*Fim da estilizacao do contato*/
+
+
+
+

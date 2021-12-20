@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link da pagina css-->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style-modal.css">
+    <link rel="stylesheet" href="./css/contato.css">
+    <title>Agencia de Viagens</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h3 class="logo">+viagens</h3>
+            <nav>
+                <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="destino.html">destino</a></li>
+                    <li><a href="promocoes.html">promoções</a></li>
+                    <li><a href="carrinho.html">carrinho</a></li>
+                    <li><a href="contato.html">contato</a></li>
+                </ul>
+            </nav>
+            <button class="login">Login</button>
+        </div>
+    </header>
+    <div class="camuflagem"></div>
+
+    <div class="grid-contato">
+        <div class="contato">
+            <div class="conteudo-contato">
+                <h1 class="titulo-principal">entrar em contato</h1>
+                <form action="">
+                    <input  id = "nome" class="input" type="text" placeholder="Nome">
+                    <input class="input" type="email" placeholder="E-mail">
+                    <input class="input" type="text" placeholder="Assunto">
+                    <textarea class="input" name="" id="" cols="80" rows="10" placeholder="Mensagem"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    <p class="texto"></p>
+    <p class="descricao"></p>
+
+    <footer class="footer">
+        <div class="container-footer">
+            <a class="button-voltar" href="contato.html"><img src="./img/seta.png" alt=""></a>
+            <h3 class="logo">+viagens</h3>           
+            <p>Desenvolvido por <a target="_blanck" href="https://www.linkedin.com/in/julio-henrique-diaz-viana-dos-santos-209009201/">Julio Santos</a> e orientado por <a target="_blanck" href="https://www.linkedin.com/in/claudio-fico-fonseca-13903260/">Claudio Fico</a> e <a target="_blanck" href="https://www.linkedin.com/in/gabriel-sales-3093b0168/">Gabriel Sales</a>.</p>
+        </div>
+    </footer>
+
+    <div id="modal-login" class="container-modal-login">
+        <div class="conteudo-modal-login">
+            <form>
+                <button class="fechar">x</button>
+                <label class="titulo-principal">Login</label>
+                <input class="input" type="text" placeholder="Nome de usuário">
+                <input class="input" type="email" placeholder="E-mail">
+                <input class="input" type="password" placeholder="Senha">
+                <button class="button" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function  iniciaModal (modalID) {
+        const modal = document.getElementById(modalID);
+        modal.classList.add('mostrar');
+        }
+
+        const login = document.querySelector('.login');
+        login.addEventListener('click', () => iniciaModal('modal-login'));
+
+
+    </script>
+</body>
+</html>

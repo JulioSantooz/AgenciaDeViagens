@@ -1,0 +1,77 @@
+/*Inicio da configuracao de toda cor da aplicacao*/
+:root{
+    --cor-fundo: #16161a;
+    --cor-titulo: #fffffe;
+    --cor-texto: #94a1b2;
+    --cor-button: rgb(43, 226, 119);
+}
+
+/*Fim da configuracao de toda cor da aplicacao*/
+
+/* inicio do grid geral*/
+.grid-home {
+    background-color: var(--cor-texto);
+    
+    margin: 0px auto;
+    max-width: 1200px;
+
+    display: grid;
+    grid-template: 
+        "conteudo-inicial" 810px
+        "conteudo-principal" 700px 
+        "feedbacks" 400px
+        /1200px
+    ;
+
+    gap: 10px;
+}
+/*fim do grid geral*/
+
+.conteudo-inicial {
+    grid-area: conteudo-inicial;
+}
+
+.conteudo-principal {
+    grid-area: conteudo-principal;
+}
+
+.item h1 {
+    font-size: 100px;
+    font-weight: 900;
+}
+
+/* inicio da estilização do feedback*/
+.feedbacks{
+    grid-area: feedbacks;
+    background-color: var(--cor-fundo);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedbacks h1 {
+    color: var(--cor-titulo);
+    margin: 30px;
+}
+
+.conteudo-feedback {
+    background-color: var(--cor-button);
+    width: 500px;
+    height: 260px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 0 60px 20px 60px;
+}
+
+.conteudo-feedback img {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+}
+/* fim da estilização do feedback*/

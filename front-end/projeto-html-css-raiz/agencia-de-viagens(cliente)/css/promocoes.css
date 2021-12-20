@@ -1,0 +1,42 @@
+/*Inicio da configuracao de toda cor da aplicacao*/
+:root{
+    --cor-fundo: #16161a;
+    --cor-titulo: #fffffe;
+    --cor-texto: #94a1b2;
+    --cor-button: rgb(43, 226, 119);
+}
+/*Fim da configuracao de toda cor da aplicacao*/
+
+/*Inicio do grid geral*/
+.grid-promocoes {
+    background-color: var(--cor-texto);
+
+    margin: 0px auto;
+    max-width: 1200px;
+
+    display: grid;
+    grid-template: 
+        "conteudo-marketing" 700px
+        "conteudo-principal" 840px 
+        /1200px
+    ;
+
+    gap: 10px;
+}
+/*Fim do grid geral*/
+
+/*Inicio da estilizacao do conteudo marketing*/
+.conteudo-marketing {
+    grid-area: conteudo-marketing;
+    background-color: var(--cor-fundo);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo-marketing h1 {
+    color: var(--cor-titulo);
+}
+/*Fim da estilizacao do conteudo marketing*/

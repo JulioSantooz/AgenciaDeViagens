@@ -1,0 +1,89 @@
+-- Geração de Modelo físico
+-- Sql ANSI 2003 - brModelo.
+
+
+
+CREATE TABLE Feedback (
+Id_feedback int PRIMARY KEY,
+Descricao varchar(300),
+Data date
+)
+
+CREATE TABLE Destino (
+Id_destino int PRIMARY KEY,
+Nome_destino varchar(11),
+Qualidade_destino float,
+Preco_destino float,
+Descricao_destino varchar(300)
+)
+
+CREATE TABLE Login (
+Id_login int PRIMARY KEY,
+Email varchar(50),
+Senha varchar(20),
+Nome_usuario varchar(20)
+)
+
+CREATE TABLE Possui (
+Id_cliente int,
+Id_login int,
+Id_cadastro int,
+PRIMARY KEY(Id_cliente,Id_login,Id_cadastro)
+)
+
+CREATE TABLE Cadastro (
+Id_cadastro int PRIMARY KEY,
+Data_nascimento date,
+Sexo char(1),
+Logradouro varchar(20),
+Cep char(9),
+Cidade varchar(30),
+Estado char(2),
+Nome_completo varchar(50)
+)
+
+CREATE TABLE Cliente (
+Id_cliente int PRIMARY KEY
+)
+
+CREATE TABLE Telefone (
+Telefone varchar(11)
+)
+
+CREATE TABLE Escolhe (
+Id_destino int,
+Id_cliente int,
+FOREIGN KEY(Id_destino) REFERENCES Destino (Id_destino),
+FOREIGN KEY(Id_cliente) REFERENCES Cliente (Id_cliente)
+)
+
+CREATE TABLE Carrinho (
+id_carrinho int PRIMARY KEY
+)
+
+CREATE TABLE Contem (
+id_carrinho int,
+Id_destino int,
+FOREIGN KEY(id_carrinho) REFERENCES Carrinho (id_carrinho),
+FOREIGN KEY(Id_destino) REFERENCES Destino (Id_destino)
+)
+
+CREATE TABLE Abriga (
+id_carrinho int,
+Id_promocao int,
+FOREIGN KEY(id_carrinho) REFERENCES Carrinho (id_carrinho)
+)
+
+CREATE TABLE Promocao (
+Id_promocao int PRIMARY KEY,
+Preco_desconto float
+)
+
+CREATE TABLE Pode_ter (
+Id_destino int,
+Id_feedback int,
+Id_promocao int,
+PRIMARY KEY(Id_destino,Id_feedback,Id_promocao)
+)
+
+ALTER TABLE Abriga ADD FOREIGN KEY(Id_promocao) REFERENCES Promocao (Id_promocao)
